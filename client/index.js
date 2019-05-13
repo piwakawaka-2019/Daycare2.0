@@ -3,16 +3,11 @@ import ReactDOM from 'react-dom'
 import { compose, createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
-
-
-
-
-
 import { BrowserRouter, Route } from 'react-router-dom'
 
 
 //ROUTES
-
+import ECC from './components/EccList'
 
 
 
@@ -37,11 +32,23 @@ const store = createStore(
   )
 )
 
+const Routes = () => {
+  return(
+        <BrowserRouter>
+        <div>
+              <Route path = "/ECC" component ={ECC}/>
+        </div>
+        </BrowserRouter>
+
+  )
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     // Connect React and Redux
     <Provider store={store}>
-      <App/>
+      <App />
+      <Routes/>
     </Provider>,
 
 
