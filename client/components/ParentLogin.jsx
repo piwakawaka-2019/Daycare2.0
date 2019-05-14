@@ -19,7 +19,6 @@ class  ParentLogin  extends React.Component{
   }
 
   submit(e){
-    console.log("submit")
     e.preventDefault()
     let {username, password} = this.state
     login({username, password})
